@@ -14,12 +14,13 @@ re_img = cv2.resize(img, coord, interpolation=cv2.INTER_AREA)
 _, thresh = cv2.threshold(re_img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
 # eroding and dilating the thresholded img
-kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
-eroded = cv2.erode(thresh, kernel, iterations=2)
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 1))
+eroded = cv2.erode(thresh, kernel, iterations=5)
 dilated = cv2.dilate(eroded, kernel, iterations=1)
-"""
+edge = cv2.Canny(dilated, 100, 200)
+
 # find contours in the img / only retrieve outermost contours + store only essential contour points
-contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contours, _ = cv2.findContours(edge, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 # out is a list of the contours
 
 # filter the contours found in the img
@@ -33,9 +34,9 @@ for contour in contours:
         # extract the region of interest
         roi = re_img[y:y+h, x:x+w]
         break
-"""
+
 while True:
-    cv2.imshow("Window", dilated)
+    cv2.imshow("Window", re_img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
