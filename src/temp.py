@@ -1,7 +1,7 @@
 import cv2
 import os
 
-folder_path = '../../images/Test/Frontal/Frontal'
+folder_path = '../../images/Test/Lateral/Lateral'
 
 image_files = [f for f in os.listdir(folder_path) if f.endswith('.jpg') or f.endswith('.png') or f.endswith('.bmp')]
 images = []
@@ -13,7 +13,7 @@ for image_file in image_files:
     images.append((image_file,image))
 
 # load the template image
-template = cv2.imread('../template.png', 0)
+template = cv2.imread('../template_lateral.png', 0)
 
 # apply thresholding to enhance contrast
 template = cv2.threshold(template, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
@@ -47,6 +47,7 @@ for i, (image_file, img) in enumerate(images):
         cv2.imshow('Result - ' + image_file, img)
     else:
         print(f"No match found for {image_file}")
+
 
 # wait for a key press
 cv2.waitKey(0)
