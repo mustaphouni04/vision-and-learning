@@ -1,13 +1,30 @@
 import cv2
 import os
+import random
 
 def load_images(images_folder_path, template_path):
+    """
+    Load images from a folder and return a list of tuples containing the image file name and the image itself.
+
+    Args:
+        images_folder_path (str): The path to the folder containing the images.
+        template_path (str): This parameter is not used in this function.
+
+    Returns:
+        list: A list of tuples containing the image file name and the image itself.
+    """
     folder_path = images_folder_path
     image_files = [f for f in os.listdir(folder_path) if f.endswith('.jpg') or f.endswith('.png') or f.endswith('.bmp')]
     images = []
 
-    # open each image file and display it
-    for image_file in image_files:
+    # Calculate the number of images to load (50% of the total)
+    num_images_to_load = len(image_files) // 3
+
+    # Shuffle the list of image files
+    random.shuffle(image_files)
+
+    # Load the first 'num_images_to_load' images
+    for image_file in image_files[:num_images_to_load]:
         image_path = os.path.join(folder_path, image_file)
         image = cv2.imread(image_path, 0)
         images.append((image_file, image))
