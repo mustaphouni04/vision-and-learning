@@ -164,4 +164,10 @@ cython_debug/
 
 datasets
 runs
-
+warped_test
+warped_train
+warped_valid
+datasets_true
+character_data
+original_images
+.ipynb_checkpoints
