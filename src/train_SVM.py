@@ -7,7 +7,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
 
 
-data_path = 'character_data' 
+data_path = '../character_data' 
 
 # Parameters
 image_size = (32, 32)  # Resize images to a fixed size
@@ -42,7 +42,7 @@ svm_classifier = SVC(kernel='linear', random_state=42)
 svm_classifier.fit(X_train, y_train)
 
 # Save the trained model to a file
-model_filename = 'svm_character_recognition_model.pkl'
+model_filename = '../models/svm_character_recognition_model.pkl'
 joblib.dump(svm_classifier, model_filename)
 print(f"Model saved as {model_filename}")
 
@@ -60,8 +60,8 @@ print("Classification Report:\n", report)
 # Load the saved model for inference
 loaded_model = joblib.load(model_filename)
 
-# Inference example (replace 'sample_image_path' with the path to your test image)
-sample_image_path = 'character_data/0/0_3.png'
+# Inference example
+sample_image_path = '../character_data/0/0_3.png'
 sample_image = cv2.imread(sample_image_path, cv2.IMREAD_GRAYSCALE)
 sample_image_resized = cv2.resize(sample_image, image_size).flatten().reshape(1, -1)
 predicted_label = loaded_model.predict(sample_image_resized)

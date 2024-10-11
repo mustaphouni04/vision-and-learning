@@ -4,28 +4,25 @@ import imutils
 import cv2
 from skimage.segmentation import clear_border # assists in cleaning up the borders of images
 import numpy as np
+import matplotlib.pyplot as plt
 
 # a hyperparameter that changes the aspect ratio of the rectangles
-min_aspect_ratio = 3 # The minimum aspect ratio used to detect and filter rectangular license plates
-max_aspect_ratio = 6 # The maximum aspect ratio of the license plate rectangle
+min_aspect_ratio = 3 # the minimum aspect ratio used to detect and filter rectangular license plates
+max_aspect_ratio = 6 # the maximum aspect ratio of the license plate rectangle
 
 # find the license plate candidate contours
 def locate_license_plate_candidates(gray, keep=5): # only return up to this many sorted license plate candidate contours
-    # perform a blackhat morphological operation that will allow
-    # us to reveal dark regions (i.e., text) on light backgrounds
-    # (i.e., the license plate itself)
+    # blackhat to reveal black against white
     rectKern = cv2.getStructuringElement(cv2.MORPH_RECT, (13, 5))
     blackhat = cv2.morphologyEx(gray, cv2.MORPH_BLACKHAT, rectKern)
 
-    # next, find regions in the image that are light
+    # find light regions in the image (close all black in the license plate to reveal a mask)
     squareKern = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
     light = cv2.morphologyEx(gray, cv2.MORPH_CLOSE, squareKern)
     light = cv2.threshold(light, 0, 255,
         cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
-    # compute the Scharr gradient representation of the blackhat
-    # image in the x-direction and then scale the result back to
-    # the range [0, 255]
+    # compute Sobel in X, emphasizing edges in characters and removing unnecessary Y edges
     gradX = cv2.Sobel(blackhat, ddepth=cv2.CV_32F,
         dx=1, dy=0, ksize=-1)
     gradX = np.absolute(gradX)
@@ -33,20 +30,18 @@ def locate_license_plate_candidates(gray, keep=5): # only return up to this many
     gradX = 255 * ((gradX - minVal) / (maxVal - minVal))
     gradX = gradX.astype("uint8")
 
-    # blur the gradient representation, applying a closing
-    # operation, and threshold the image using Otsu's method
+    # blur edges and close (black dots inside white space) + threshold the img
     gradX = cv2.GaussianBlur(gradX, (5, 5), 0)
     gradX = cv2.morphologyEx(gradX, cv2.MORPH_CLOSE, rectKern)
     thresh = cv2.threshold(gradX, 0, 255,
         cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
-    # perform a series of erosions and dilations to clean up the
-    # thresholded image
+    # perform a series of erosions and dilations to clean up the thresh img
     thresh = cv2.erode(thresh, None, iterations=2)
     thresh = cv2.dilate(thresh, None, iterations=2)
 
-    # take the bitwise AND between the threshold result and the
-    # light regions of the image
+    # take the bitwise AND between the threshold result and the light regions of the image
+    # all vals that are 1 in the mask will be 1 in thresh, otherwise 0
     thresh = cv2.bitwise_and(thresh, thresh, mask=light)
     thresh = cv2.dilate(thresh, None, iterations=2)
     thresh = cv2.erode(thresh, None, iterations=1)
@@ -63,7 +58,6 @@ def locate_license_plate_candidates(gray, keep=5): # only return up to this many
 
 def locate_license_plate(gray, candidates,
         clearBorder=False):
-    # initialize the license plate contour and ROI
     lpCnt = None
     roi = None
     # loop over the license plate candidate contours
@@ -84,21 +78,13 @@ def locate_license_plate(gray, candidates,
 
             # check to see if we should clear any foreground
             # pixels touching the border of the image
-            # (which typically, not but always, indicates noise)
             if clearBorder:
                 roi = clear_border(roi)
-            # display any debugging information and then break
-            # from the loop early since we have found the license
-            # plate region
             break
-    # return a 2-tuple of the license plate ROI and the contour
-    # associated with it
+            
     return (roi, lpCnt)
 
-def find_and_ocr(image, clearBorder=False):
-    # convert the input image to grayscale, locate all candidate
-    # license plate regions in the image, and then process the
-    # candidates, leaving us with the *actual* license plate
+def find_plate(image, clearBorder=False):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     candidates = locate_license_plate_candidates(gray)
     (lp, lpCnt) = locate_license_plate(gray, candidates,
@@ -107,7 +93,7 @@ def find_and_ocr(image, clearBorder=False):
     return lp
 
 # grab all image paths in the input directory
-imagePaths = sorted(list(paths.list_images("../../images/Test")))
+imagePaths = sorted(list(paths.list_images("../original_images")))
 
 # loop over all image paths in the input directory
 for imagePath in imagePaths:
@@ -115,9 +101,11 @@ for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     image = imutils.resize(image, width=500)
     # apply automatic license plate recognition
-    lp = find_and_ocr(image, clearBorder=True)
+    lp = find_plate(image, clearBorder=True)
     # only continue if the license plate was successfully detected
     if lp is not None:
         # display the detected region of the license plate
-        cv2.imshow("Detected License Plate", lp)
-        cv2.waitKey(0)
+        plt.imshow(lp, cmap='gray')
+        plt.title(f"{imagePath}")
+        plt.axis('off')
+        plt.show()

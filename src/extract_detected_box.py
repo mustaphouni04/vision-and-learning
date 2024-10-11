@@ -2,21 +2,21 @@ import cv2
 from ultralytics import YOLO
 import os
 
-# load YOLOv8 fine-tuned model
-model = YOLO('models/best2.pt')
+# load YOLOv9 fine-tuned model
+model = YOLO('../models/best2.pt')
 
 # load class names
 class_names = model.names
 
 # set the directory paths
-valid_dir_path = 'datasets/License_Plate_Detection.v2i.yolov9/valid/images'
-train_dir_path = 'datasets/License_Plate_Detection.v2i.yolov9/train/images'
-test_dir_path = 'datasets/License_Plate_Detection.v2i.yolov9/test/images'
+valid_dir_path = '../datasets/License_Plate_Detection.v2i.yolov9/valid/images'
+train_dir_path = '../datasets/License_Plate_Detection.v2i.yolov9/train/images'
+test_dir_path = '../datasets/License_Plate_Detection.v2i.yolov9/test/images'
 
 # create directories to store cropped images
-valid_cropped_dir_path = 'datasets/License_Plate_Detection.v2i.yolov9/valid/cropped'
-train_cropped_dir_path = 'datasets/License_Plate_Detection.v2i.yolov9/train/cropped'
-test_cropped_dir_path = 'datasets/License_Plate_Detection.v2i.yolov9/test/cropped'
+valid_cropped_dir_path = '../datasets/License_Plate_Detection.v2i.yolov9/valid/cropped'
+train_cropped_dir_path = '../datasets/License_Plate_Detection.v2i.yolov9/train/cropped'
+test_cropped_dir_path = '../datasets/License_Plate_Detection.v2i.yolov9/test/cropped'
 
 # create directories if they don't exist
 os.makedirs(valid_cropped_dir_path, exist_ok=True)
@@ -55,7 +55,7 @@ for image_name in valid_image_list + train_image_list + test_image_list:
         boxes = result.boxes  # extract detected bounding boxes
         for box in boxes:
             # extract box coordinates
-            x1, y1, x2, y2 = map(int, box.xyxy[0])  # Convert to integer values
+            x1, y1, x2, y2 = map(int, box.xyxy[0])  # convert to integer values
             
             # get the class label and confidence score
             class_id = int(box.cls[0])

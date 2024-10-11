@@ -72,7 +72,7 @@ def detect_characters(plate):
     return thresh
 
 # Example usage of the function with a cropped license plate image
-plate_image_path = 'warped_test/warped_0918MCC_jpg.rf.0d52a87a35963f1606ba4d0886fe3f28.jpg'
+plate_image_path = '../warped_test/warped_0918MCC_jpg.rf.0d52a87a35963f1606ba4d0886fe3f28.jpg'
 plate = cv2.imread(plate_image_path)
 thresh = detect_characters(plate)
 

@@ -1,6 +1,7 @@
 import cv2
 import os
 import random
+import matplotlib.pyplot as plt
 
 def load_images(images_folder_path, template_path):
     """
@@ -31,16 +32,16 @@ def load_images(images_folder_path, template_path):
 
     return images
 
-def detect_using_template(images_folder_path, template_paths, threshold=0.225, width=1600, height=900):
+def detect_using_template(images_folder_path, template_paths, threshold=0.1, width=1920, height=1080):
     """
     Detects the region of the rectangle in the image using template matching.
 
     Args:
     images_folder_path (str): Path to the folder containing the images.
     template_paths (list): List of paths to the template images.
-    threshold (float, optional): Threshold for the maximum value in the result matrix. Defaults to 0.225.
-    width (int, optional): Width of the resized image. Defaults to 1600.
-    height (int, optional): Height of the resized image. Defaults to 900.
+    threshold (float, optional): Threshold for the maximum value in the result matrix. Defaults to 0.1.
+    width (int, optional): Width of the resized image. Defaults to 1920.
+    height (int, optional): Height of the resized image. Defaults to 1080.
 
     Returns:
     list: A list of tuples containing the image file name, the image itself, and the region of the rectangle.
@@ -106,13 +107,12 @@ def detect_using_template(images_folder_path, template_paths, threshold=0.225, w
 
 def show_detection(results):
     for result in results:
-        cv2.imshow(f"{result[0]}", result[2])
+        output_path = f"../template_detected/output_{result[0]}"
+        cv2.imwrite(output_path, result[2])
+        print(f"Image saved to {output_path}")
 
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
-def calculate_accuracy(images_folder_path, template_paths, threshold=0.225, width=1600, height=900):
-    results, images = detect_using_template(images_folder_path, template_paths, threshold=0.225, width=1600, height=900)
+def calculate_accuracy(images_folder_path, template_paths, threshold=0.1, width=1600, height=900):
+    results, images = detect_using_template(images_folder_path, template_paths, threshold=0.1, width=1600, height=900)
     print(len(results), " plates have been detected.")
     print(len(images), " images we have in total.")
     print("Accuracy: ", len(results)/len(images))

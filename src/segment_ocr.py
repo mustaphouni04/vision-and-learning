@@ -5,7 +5,7 @@ import joblib
 
 
 # Load the image
-image_path = 'warped_test/warped_6773FDH_jpg.rf.1e551eb6448f0d2daeea474c31828f3c.jpg'
+image_path = '../warped_valid/warped_3620DXZ_jpg.rf.abd2146b563393f4f6d1206618704a7f.jpg'
 image = cv2.imread(image_path)
 
 # Check if the image is loaded successfully

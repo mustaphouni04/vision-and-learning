@@ -6,7 +6,7 @@ import joblib
 segmentation_spacing = 0.92
 
 '''1 read the picture, and do grayscale processing'''
-img = cv2.imread("warped_test/warped_3938GSP_jpg.rf.eb8908fed7ad7778a3d3231e4b6a7550.jpg")
+img = cv2.imread("../warped_test/warped_3938GSP_jpg.rf.eb8908fed7ad7778a3d3231e4b6a7550.jpg")
 img_gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 img_gray = cv2.resize(img_gray, None, fx=2, fy=2, interpolation=cv2.INTER_AREA)
 
@@ -54,7 +54,7 @@ def find_end(start):
 n = 1
 start = 1
 end = 2
-loaded_model = joblib.load("svm_character_recognition_model.pkl")
+loaded_model = joblib.load("../models/svm_character_recognition_model.pkl")
 text = ""
 while n < width - 1:
     n += 1
