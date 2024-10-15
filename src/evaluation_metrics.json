@@ -1,0 +1,512 @@
+[
+    {
+        "image": "0044MTL-checkpoint.jpg",
+        "ground_truth": "0044MTL-checkpoint",
+        "predicted_text": "BO044MT",
+        "levenshtein_distance": 10
+    },
+    {
+        "image": "0918MCC-checkpoint.jpg",
+        "ground_truth": "0918MCC-checkpoint",
+        "predicted_text": "0918MCC",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "1565HTS-checkpoint.jpg",
+        "ground_truth": "1565HTS-checkpoint",
+        "predicted_text": "1565HTS",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "1649KBB-checkpoint.jpg",
+        "ground_truth": "1649KBB-checkpoint",
+        "predicted_text": "",
+        "levenshtein_distance": 18
+    },
+    {
+        "image": "0044MTL.jpg",
+        "ground_truth": "0044MTL",
+        "predicted_text": "BO044MT",
+        "levenshtein_distance": 2
+    },
+    {
+        "image": "0180DBD.jpg",
+        "ground_truth": "0180DBD",
+        "predicted_text": "0180DBO",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "0340KMJ.jpg",
+        "ground_truth": "0340KMJ",
+        "predicted_text": "0340KMJ",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "0389GLJ.jpg",
+        "ground_truth": "0389GLJ",
+        "predicted_text": "O389GLU",
+        "levenshtein_distance": 2
+    },
+    {
+        "image": "0812LFT.jpg",
+        "ground_truth": "0812LFT",
+        "predicted_text": "YOB12LEI",
+        "levenshtein_distance": 4
+    },
+    {
+        "image": "0918MCC.jpg",
+        "ground_truth": "0918MCC",
+        "predicted_text": "0918MCC",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "1565HTS.jpg",
+        "ground_truth": "1565HTS",
+        "predicted_text": "1565HTS",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "1649KBB.jpg",
+        "ground_truth": "1649KBB",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "2021AFR.jpg",
+        "ground_truth": "2021AFR",
+        "predicted_text": "2021AFR",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "2125KGC.jpg",
+        "ground_truth": "2125KGC",
+        "predicted_text": "2125KGC",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "2163LFF.jpg",
+        "ground_truth": "2163LFF",
+        "predicted_text": "2163LF",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "2611LGJ.jpg",
+        "ground_truth": "2611LGJ",
+        "predicted_text": "POLI",
+        "levenshtein_distance": 5
+    },
+    {
+        "image": "2801NLE.jpg",
+        "ground_truth": "2801NLE",
+        "predicted_text": "2801NL",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "2924HSN.jpg",
+        "ground_truth": "2924HSN",
+        "predicted_text": "2924H",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "2960FXL.jpg",
+        "ground_truth": "2960FXL",
+        "predicted_text": "2960FXL",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "3031HKX.jpg",
+        "ground_truth": "3031HKX",
+        "predicted_text": "3031HKX",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "3449GMV.jpg",
+        "ground_truth": "3449GMV",
+        "predicted_text": "83449GMV",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "3600GWH.jpg",
+        "ground_truth": "3600GWH",
+        "predicted_text": "FVA",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "3622MKH.jpg",
+        "ground_truth": "3622MKH",
+        "predicted_text": "3622MKH",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "3682GRN.jpg",
+        "ground_truth": "3682GRN",
+        "predicted_text": "3682GRN",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "3705FZJ.jpg",
+        "ground_truth": "3705FZJ",
+        "predicted_text": "3705F2ZI",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "3708KRB.jpg",
+        "ground_truth": "3708KRB",
+        "predicted_text": "TSE",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "3938GSP.jpg",
+        "ground_truth": "3938GSP",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "3946CCH.jpg",
+        "ground_truth": "3946CCH",
+        "predicted_text": "3946CCH",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "3995KBZ.jpg",
+        "ground_truth": "3995KBZ",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "4157HXY.jpg",
+        "ground_truth": "4157HXY",
+        "predicted_text": "7",
+        "levenshtein_distance": 5
+    },
+    {
+        "image": "4210KVH.jpg",
+        "ground_truth": "4210KVH",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "4225HZZ.jpg",
+        "ground_truth": "4225HZZ",
+        "predicted_text": "4225HZZ",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "4303JJT.jpg",
+        "ground_truth": "4303JJT",
+        "predicted_text": "4303JJT",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "4674FHC.jpg",
+        "ground_truth": "4674FHC",
+        "predicted_text": "4674FHC",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "4682LKR.jpg",
+        "ground_truth": "4682LKR",
+        "predicted_text": "4682LKR",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "4741KCB.jpg",
+        "ground_truth": "4741KCB",
+        "predicted_text": "4741KCB",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "4796CCV.jpg",
+        "ground_truth": "4796CCV",
+        "predicted_text": "4796CCV",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "4977LWD.jpg",
+        "ground_truth": "4977LWD",
+        "predicted_text": "UT",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "5055FZV.jpg",
+        "ground_truth": "5055FZV",
+        "predicted_text": "A 3 4",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "5162LXM.jpg",
+        "ground_truth": "5162LXM",
+        "predicted_text": "5162LXM",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "5224HMZ.jpg",
+        "ground_truth": "5224HMZ",
+        "predicted_text": "S224HMZ",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "5271KYT.jpg",
+        "ground_truth": "5271KYT",
+        "predicted_text": "45271KYT",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "5275HGY.jpg",
+        "ground_truth": "5275HGY",
+        "predicted_text": "5275HGY",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "5329KVC.jpg",
+        "ground_truth": "5329KVC",
+        "predicted_text": "5329KVC",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "5331JDM.jpg",
+        "ground_truth": "5331JDM",
+        "predicted_text": "NL",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "5409BNC.jpg",
+        "ground_truth": "5409BNC",
+        "predicted_text": "5409BNC",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "5743KCR.jpg",
+        "ground_truth": "5743KCR",
+        "predicted_text": "8S743KCR",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "5746CNX.jpg",
+        "ground_truth": "5746CNX",
+        "predicted_text": "53746CNX",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "5759KSG.jpg",
+        "ground_truth": "5759KSG",
+        "predicted_text": "9",
+        "levenshtein_distance": 5
+    },
+    {
+        "image": "6180LSK.jpg",
+        "ground_truth": "6180LSK",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "6196CKV.jpg",
+        "ground_truth": "6196CKV",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "6465HPD.jpg",
+        "ground_truth": "6465HPD",
+        "predicted_text": "6465HPD",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "6835MTY.jpg",
+        "ground_truth": "6835MTY",
+        "predicted_text": "6835MTY",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "7068HNK.jpg",
+        "ground_truth": "7068HNK",
+        "predicted_text": "7068HNK",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "7205CYZ.jpg",
+        "ground_truth": "7205CYZ",
+        "predicted_text": "7205CYZ",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "7365CDF.jpg",
+        "ground_truth": "7365CDF",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "7429BYF.jpg",
+        "ground_truth": "7429BYF",
+        "predicted_text": "PAERAT",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "7499FHX.jpg",
+        "ground_truth": "7499FHX",
+        "predicted_text": "7499FHX",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "7515BVD.jpg",
+        "ground_truth": "7515BVD",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "7600KDN.jpg",
+        "ground_truth": "7600KDN",
+        "predicted_text": "7SO0KON",
+        "levenshtein_distance": 3
+    },
+    {
+        "image": "7640GTM.jpg",
+        "ground_truth": "7640GTM",
+        "predicted_text": "7640GTM",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "7687BZT.jpg",
+        "ground_truth": "7687BZT",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "7829MRD.jpg",
+        "ground_truth": "7829MRD",
+        "predicted_text": "829MRD",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "7973MJK.jpg",
+        "ground_truth": "7973MJK",
+        "predicted_text": "7973MJK",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "8094HSS.jpg",
+        "ground_truth": "8094HSS",
+        "predicted_text": "80394HSS",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "8124HBB.jpg",
+        "ground_truth": "8124HBB",
+        "predicted_text": "8124HBB",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "8502FHD.jpg",
+        "ground_truth": "8502FHD",
+        "predicted_text": "CSD",
+        "levenshtein_distance": 5
+    },
+    {
+        "image": "9014FCF.JPG",
+        "ground_truth": "9014FCF",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "9098HGY.jpg",
+        "ground_truth": "9098HGY",
+        "predicted_text": "9098H6Y",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "9335DTP.jpg",
+        "ground_truth": "9335DTP",
+        "predicted_text": "9335DTP",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "9372JHG.jpg",
+        "ground_truth": "9372JHG",
+        "predicted_text": "39372JHG",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "9633MJK.jpg",
+        "ground_truth": "9633MJK",
+        "predicted_text": "93633MJK",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "9700MPH.jpg",
+        "ground_truth": "9700MPH",
+        "predicted_text": "9700MPH",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "9752LBC.jpg",
+        "ground_truth": "9752LBC",
+        "predicted_text": "9752LBC",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "9865JJC.jpg",
+        "ground_truth": "9865JJC",
+        "predicted_text": "7",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "9968MCK.jpg",
+        "ground_truth": "9968MCK",
+        "predicted_text": "9968MCK",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "B2988WT.jpg",
+        "ground_truth": "B2988WT",
+        "predicted_text": "B29S88W",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "B3556XB.jpg",
+        "ground_truth": "B3556XB",
+        "predicted_text": "32556XB",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "B4047WJ.jpg",
+        "ground_truth": "B4047WJ",
+        "predicted_text": "BB4047WI",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "B4963PW.jpg",
+        "ground_truth": "B4963PW",
+        "predicted_text": "B4963PW",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "B6962WX.jpg",
+        "ground_truth": "B6962WX",
+        "predicted_text": "B6962W",
+        "levenshtein_distance": 0
+    },
+    {
+        "image": "B9902XD.jpg",
+        "ground_truth": "B9902XD",
+        "predicted_text": "",
+        "levenshtein_distance": 7
+    },
+    {
+        "image": "B9963PH.jpg",
+        "ground_truth": "B9963PH",
+        "predicted_text": "9963P",
+        "levenshtein_distance": 1
+    },
+    {
+        "image": "H0612Y.JPG",
+        "ground_truth": "H0612Y",
+        "predicted_text": "",
+        "levenshtein_distance": 6
+    },
+    {
+        "image": "H0853Z.JPG",
+        "ground_truth": "H0853Z",
+        "predicted_text": "2",
+        "levenshtein_distance": 6
+    }
+]
