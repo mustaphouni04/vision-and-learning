@@ -171,3 +171,5 @@ character_data
 original_images
 .ipynb_checkpoints
 template_detected
+src/output_with_text
+src/segmented_images
