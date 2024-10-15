@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score, classification_report
 data_path = '../character_data' 
 
 # Parameters
-image_size = (32, 32)  # Resize images to a fixed size
+image_size = (20, 20)  # Resize images to a fixed size
 
 # Prepare the data
 X = []  # Feature vectors
